@@ -39,21 +39,29 @@ Dart Sass + TypeScriptを用いた開発環境のサンプル
 監視対象 : ``["src/script/*.ts", "src/script/*/*.ts", "src/script/*js", "src/script/*/*.js"]``  
 出力 : ``dist/main.js``
 
-## npm scripts
+## 使い方
+
+このリポジトリをgit cloneして、
+
+```
+$ npm install
+```
+
+これで使えるようになります。
 
 ```
 // コンパイル実行
-npm run dev
+$ npm run dev
 ```
 
 ```
 // ファイル変更検知・自動コンパイル・ローカルサーバー起動
-npm run watch
+$ npm run watch
 ```
 
 ```
 // ビルド(minify)
-npm run build
+$ npm run build
 ```
 
 npm scriptsは、TypeScriptでの開発を前提として作成。JavaScriptでの開発を行う場合は、``[script]_js``を使用するか、直接npm scriptsを書き換える。  
