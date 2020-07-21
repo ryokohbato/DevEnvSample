@@ -30,8 +30,7 @@ Dart Sass + TypeScriptを用いた開発環境のサンプル
 
 エントリーポイント : ``src/script/main.ts``  
 監視対象 : ``["src/script/*.ts", "src/script/*/*.ts", "src/script/*.js", "src/script/*/*.js"]``  
-出力(通常) : ``dist/main.js``  
-出力(minify) : ``dist/main-min.js``
+出力 : ``dist/main.js``  
 
 ### JavaScript
 
