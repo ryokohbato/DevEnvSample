@@ -5,11 +5,18 @@ Dart Sass + TypeScriptを用いた開発環境のサンプル
 ## 主な機能
 
 - [destyle.css](https://github.com/nicolas-cusan/destyle.css/)付属
-- sassコンパイル・自動ベンダープレフィックス付与(``.browserslistrc``参照)・ソースマップ付与
-- tsコンパイル(デフォルトでES3)・ソースマップ付与
+- sassコンパイル・自動ベンダープレフィックス付与(``.browserslistrc``参照)
+- tsコンパイル(デフォルトでES3に変換)
 - jsバンドル・変換(Babel)
+- ソースマップ
+- ビルド(minify)・簡易的なコード難読化
 - ファイル変更検知・自動コンパイル
 - ローカルサーバー起動
+
+| 機能 | run / watch | build |
+|:-----:|:-----:|:-----:|
+| ソースマップ | ✓ | × |
+| コード最小化 | × | ✓ |
 
 ## 対象ファイル
 
@@ -42,24 +49,25 @@ Dart Sass + TypeScriptを用いた開発環境のサンプル
 
 このリポジトリをgit cloneして、
 
-```
+```npm
+// プロジェクトの名前は適宜変更してください
 $ npm install
 ```
 
 これで使えるようになります。
 
-```
+```npm
 // コンパイル実行
 $ npm run dev
 ```
 
-```
+```npm
 // ファイル変更検知・自動コンパイル・ローカルサーバー起動
 $ npm run watch
 ```
 
-```
-// ビルド(minify)
+```npm
+// ビルド
 $ npm run build
 ```
 
