@@ -1,19 +1,23 @@
 const path = require("path");
 
 module.exports = {
-  mode: "production",
-  entry: "./src/script/main.js",
+  mode: "development",
+  entry: "./src/script/main.ts",
   output: {
+    // 出力フォルダはgulpで指定
     filename: "main.js",
     path: path.join(__dirname, "dist")
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: "ts-loader",
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
   }
 };

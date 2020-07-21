@@ -4,8 +4,6 @@ const sass = require("gulp-sass");
 sass.compiler = require('sass');    // コンパイラにDartSassを指定
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
-const ts = require("gulp-typescript");
-const minify = require('gulp-minify');
 const webpackStream = require("webpack-stream");
 const webpack = require("webpack");
 const webserver = require("gulp-webserver");
@@ -55,43 +53,28 @@ gulp.task("_sass__build", () => {
 
 // TypeScriptコンパイル
 gulp.task("_ts", () => {
-  return gulp.src("src/script/main.ts")
-    .pipe(sourcemaps.init())
-    .pipe(ts({
-      module: "amd",
-      out: "main.js",
-      // ES3で出力
-      target: "ES3",
-    }))
-    .pipe(sourcemaps.write())
+  const webpackConfig = require('./webpack.ts.development.config.js');
+  return webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest("dist/"));
 })
 
 // [build] TypeScriptコンパイル
 gulp.task("_ts__build", () => {
-  return gulp.src("src/script/main.ts")
-    .pipe(ts({
-      module: "amd",
-      out: "main.js",
-      // ES3で出力
-      target: "ES3",
-      // コメント削除
-      removeComments: true,
-    }))
-    .pipe(minify())
+  const webpackConfig = require('./webpack.ts.production.config.js');
+  return webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest("dist/"));
 })
 
 // JSをWebpackでバンドル
 gulp.task("_js", () => {
-  const webpackConfig = require('./webpack.development.config.js');
+  const webpackConfig = require('./webpack.js.development.config.js');
   return webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest("dist/"));
 })
 
 // [build] JSをWebpackでバンドル
 gulp.task("_js__build", () => {
-  const webpackConfig = require('./webpack.production.config.js');
+  const webpackConfig = require('./webpack.js.production.config.js');
   return webpackStream(webpackConfig, webpack)
     .pipe(gulp.dest("dist/"));
 })
@@ -99,7 +82,7 @@ gulp.task("_js__build", () => {
 // コンパイル・バンドル実行 (TypeScript)
 gulp.task("dev_ts", gulp.parallel("_html", "_sass", "_ts"));
 
-// ビルド
+// ビルド (TypeScript)
 gulp.task("build_ts", gulp.parallel("_html", "_sass__build", "_ts__build"));
 
 // コンパイル・バンドル実行 (JavaScript)
