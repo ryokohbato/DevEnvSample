@@ -78,7 +78,7 @@ npm scriptsは、TypeScriptでの開発を前提として作成。JavaScriptで�
 
 ## License
 
-Apache License Version 2.0
+MIT License
 
 ## Author
 
