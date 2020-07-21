@@ -2,6 +2,8 @@
 
 Dart Sass + TypeScriptを用いた開発環境のサンプル
 
+![サンプル](https://raw.githubusercontent.com/ryokohbato/DevEnvSample/images/images/usage.gif?token=AQDMNV75FZAD2S4UJSK7AZK7C3O3Y)
+
 ## 主な機能
 
 - [destyle.css](https://github.com/nicolas-cusan/destyle.css/)付属
