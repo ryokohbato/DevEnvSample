@@ -9,7 +9,8 @@
     "watch": "gulp watch_ts",
     "build": "gulp build_ts",
     "dev_js": "gulp dev_js",
-    "watch_js": "gulp watch_js"
+    "watch_js": "gulp watch_js",
+    "build_js": "gulp build_js"
   },
   "repository": {
     "type": "git",

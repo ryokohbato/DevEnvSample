@@ -89,6 +89,13 @@ gulp.task("_js", () => {
     .pipe(gulp.dest("dist/"));
 })
 
+// [build] JSをWebpackでバンドル
+gulp.task("_js__build", () => {
+  const webpackConfig = require('./webpack.production.config.js');
+  return webpackStream(webpackConfig, webpack)
+    .pipe(gulp.dest("dist/"));
+})
+
 // コンパイル・バンドル実行 (TypeScript)
 gulp.task("dev_ts", gulp.parallel("_html", "_sass", "_ts"));
 
@@ -97,6 +104,9 @@ gulp.task("build_ts", gulp.parallel("_html", "_sass__build", "_ts__build"));
 
 // コンパイル・バンドル実行 (JavaScript)
 gulp.task("dev_js", gulp.parallel("_html", "_sass", "_js"));
+
+// ビルド (JavaScript)
+gulp.task("build_js", gulp.parallel("_html", "_sass__build", "_js__build"));
 
 // 変更のwatch・ローカルサーバー起動 (TypeScript)
 gulp.task("watch_ts", done => {
