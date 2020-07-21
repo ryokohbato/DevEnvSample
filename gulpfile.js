@@ -124,8 +124,8 @@ gulp.task("watch_ts", done => {
         }))
 
       gulp.watch("src/index.html", gulp.task("_html"));
-      gulp.watch(["src/style/*scss", "src/style/*/*.scss"], gulp.task("_sass"));
-      gulp.watch(["src/script/*.ts", "src/script/*/*.ts", "src/script/*js", "src/script/*/*.js"], gulp.task("_ts"));
+      gulp.watch(["src/style/*.scss", "src/style/*/*.scss"], gulp.task("_sass"));
+      gulp.watch(["src/script/*.ts", "src/script/*/*.ts", "src/script/*.js", "src/script/*/*.js"], gulp.task("_ts"));
     }
   })
 })
@@ -146,8 +146,8 @@ gulp.task("watch_js", done => {
         }))
 
       gulp.watch("src/index.html", gulp.task("_html"));
-      gulp.watch("src/style/*scss", gulp.task("_sass"));
-      gulp.watch(["src/script/*.ts", "src/script/*/*.ts", "src/script/*js", "src/script/*/*.js"], gulp.task("_js"));
+      gulp.watch(["src/style/*.scss", "src/style/*/*.scss"], gulp.task("_sass"));
+      gulp.watch(["src/script/*.ts", "src/script/*/*.ts", "src/script/*.js", "src/script/*/*.js"], gulp.task("_js"));
     }
   })
 })
