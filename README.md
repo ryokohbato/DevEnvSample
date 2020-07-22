@@ -32,19 +32,19 @@ Dart Sass + TypeScriptを用いた開発環境のサンプル
 ### Sass
 
 エントリーポイント : ``src/style/style.scss``  
-監視対象 : ``["src/style/*.scss", "src/style/*/*.scss"]``  
+監視対象 : ``["src/style/*.scss", "src/style/**/*.scss"]``  
 出力 : ``dist/style.css``
 
 ### TypeScript
 
 エントリーポイント : ``src/script/main.ts``  
-監視対象 : ``["src/script/*.ts", "src/script/*/*.ts", "src/script/*.js", "src/script/*/*.js"]``  
+監視対象 : ``["src/script/*.ts", "src/script/**/*.ts", "src/script/*.js", "src/script/**/*.js"]``  
 出力 : ``dist/main.js``  
 
 ### JavaScript
 
 エントリーポイント : ``src/script/main.js``  
-監視対象 : ``["src/script/*.ts", "src/script/*/*.ts", "src/script/*.js", "src/script/*/*.js"]``  
+監視対象 : ``["src/script/*.ts", "src/script/**/*.ts", "src/script/*.js", "src/script/**/*.js"]``  
 出力 : ``dist/main.js``
 
 ## 使い方
